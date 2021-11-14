@@ -1,0 +1,660 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+        *{
+    margin : 0;
+    padding : 0;
+    bo x-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgba(233, 227, 227, 0.856);
+    font-family: 'Kaisei Tokumin', serif;
+}
+a{
+    text-decoration: none;
+
+}
+header{
+    height: 100vh;
+    width : 100%;
+    background: linear-gradient(rgba(3,5,7,.5),rgba(4,7,2,0.3)),url('Hotel.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+header a{
+    color : white;
+    font-size: 1.7rem;
+    font-family: 'Poppins', sans-serif;
+}
+nav {
+    display : flex;
+    width : 100%;
+    height : 12rem;
+    padding : 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a img{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 7px;
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position : relative;
+    margin-right: 4rem;
+
+}
+.nav-links ul li a:hover{
+    color :chartreuse;
+}
+.nav-links ul li::after{
+    content: "";
+    position: absolute;
+    left : 0;
+    width : 0%;
+    height : 2px;
+    display: block;
+    background-color: #f44336;
+    margin : auto;
+    transition: .5s ease;
+
+}
+.nav-links ul li:hover::after{
+    width : 100%;
+
+}
+.nav-links ul li:active{
+    color: green;
+}
+.text-box{
+    /* font-size: 1.7rem; */
+    line-height: 3.5rem;
+    color: white;
+    width : 90%;
+    position: absolute;
+    top: 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 3rem;
+
+}
+.text-box p{
+    font-size: 2.3rem;
+    margin : 10px 0px 4px;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid white;
+    padding : 12px 20px;
+    font-size: 23px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border : 1px solid rgb(233, 200, 138);
+    background-color:rgb(233, 200, 138);
+    transition: 1s;
+    color : black;
+    font-weight: 500;
+    border-radius: 20px;
+}
+nav .fa{
+    display:none;
+}
+@media(max-width : 700px){
+    .text-box h1{
+        font-size: 2rem;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background-color: rgb(218, 113, 113);
+        height: 100vh;
+        width : 200px;
+        top :0;
+        right : -200px;
+        text-align: left;
+        z-index: 20;
+        transition: .5s ease;
+    }
+    nav .fa{
+        display: inline-block;
+        color: white;
+        font-size: 22px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    nav ul {
+        padding: 30px;
+    }
+}
+/* course section css */
+.course{
+    font-family: 'Poppins', sans-serif;
+    width : 80%;
+    margin : auto;
+    text-align: center;
+    padding-top: 100px;
+    /* background-color: teal; */
+}
+.course h1{
+    font-size: 36px;
+    font-weight: 700px;
+    color: black;
+}
+.course p{
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+    padding : 23px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.course-col{
+    flex-basis: 30%;
+    background-color:rgb(240, 198, 198);
+    margin-bottom: 5%;
+    border-radius: 10px;
+    padding : 23px;
+    transition: .5s;
+}
+.course-col h3 {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 2rem;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+@media(max-width:700px) {
+    .course h1{
+        font-weight: 700;
+    }
+    .course p{
+        font-weight: 500;
+    }
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .course-col:hover{
+        box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    }
+}
+/* campus section  */
+.campus{
+    width : 80%;
+    margin : auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus h1 {
+    text-transform: capitalize;
+}
+.campus-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    display: block;
+    width : 100%;
+    height : 100%;
+}
+.layer{
+    /* display: none; */
+    background: transparent;
+    height: 100%;
+    width : 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .3s ease-in-out;
+}
+
+.layer:hover{
+    background: rgba(226, 163, 45, 0.637);
+    cursor: pointer;
+}
+.layer h1{
+    width : 100%;
+    font-weight: 500;
+    color : white;
+    bottom: 0;
+    left : 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: .5s;
+}
+.layer:hover h1{
+    bottom: 49%;
+    opacity:1;
+}
+
+/* facilities corner start from here  */
+.facilities-col{
+    border-radius: 20px;
+    overflow: hidden;
+}
+.facilities-col img{
+    width : 100%;
+}
+.layer h1{
+    text-transform: capitalize;
+}
+/* testimonials corner start from her e */
+.testimonials{
+    width : 80%;
+}
+.testimonials-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color:rgb(233, 200, 138);
+    padding : 25px;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+    height : auto;
+}
+.testimonials-col img{
+    width : 100px;
+    height : 50%;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.intro h3 {
+    padding: 10px 0px;
+    font-size: 24px;
+    text-align: left;
+    margin-left: 0px;
+    text-transform: capitalize;
+}
+.intro p {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+    padding: 0;
+}
+.testimonials-col:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: .3s;
+}
+.intro .fa{
+    color: red;
+    padding-top: 10px;
+    margin: 0px;
+    padding: 0;
+}
+.intro .fas{
+    color : red;
+    margin: 0px;
+    padding: 0;
+}
+
+/* call to action css  */
+.cta{
+    margin :auto;
+    width : 80%;
+    height: 100vh;
+    background: linear-gradient(rgba(104, 37, 37, 0.5),rgba(0,0,0, .3)),url('Reception.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 100px;
+    color: white;
+    margin-bottom: 20px;
+}
+.cta h1 {
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+.cta p {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 10px;
+    color: white;
+}
+.cta a{
+    color:white;
+    border-radius: 20%;
+}
+@media(max-width: 700px){
+    .cta{
+        margin :auto;
+        width : 80%;
+        height: 40vh;
+        background: linear-gradient(rgba(104, 37, 37, 0.5),rgba(0,0,0, .3)),url('profil.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 50px;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .cta h1 {
+        font-size: 19px;
+        font-weight: 100;
+        margin: 0px 5px ;
+    }
+    .cta p {
+        font-size: 14px;
+        margin: 0px 5px;
+        font-weight: 150;
+    }
+}
+/* footer css starts here  */
+footer {
+    margin-top: 100px;
+    width: 100%;
+    background-color: rgba(68, 64, 64,1.2);
+    color: white;
+    height: 40vh;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 35px;
+}
+.about-us{
+    flex-basis: 40%;
+}
+.footer .fab{
+    padding-right: 4px;
+}
+.copy{
+    text-align: center;
+    font-size: 1.7rem;
+}
+@media(max-width: 700px){
+    footer{
+        margin-top: 100px;
+        width: 100%;
+        background-color: rgba(68, 64, 64,1.2);
+        color: white;
+        height: 40vh;
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        font-size: 12.4px;
+        line-height: 20px;
+    }
+    footer h1 {
+        margin-bottom: 14px;
+        text-decoration: underline grey;
+    }
+}
+/* social handlers  */
+.social{
+    position: fixed;
+    top: 50%;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+
+}
+.social div{
+    margin-bottom: .3rem;
+    margin-left: .3rem;
+}
+.social a{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+    color: white;
+    padding: 7px;
+    width : 11rem;
+    transform: translateX(-9rem);
+    transition: all .4s linear;
+}
+.fab{
+    padding: 2px;
+    padding-left: 5px;
+    font-size: 1.3rem;
+}
+.instagram a{
+    background-color: rgb(221, 64, 64);
+}
+.facebook a{
+    background-color: rgba(83, 83, 201, 0.801);
+}
+.twitter a{
+    background-color: lightblue;
+}
+.linkedin a{
+    background-color: lightseagreen;
+}
+.social a:hover{
+    transform: translateX(0);
+}
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- link for cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="Logo.jpg" alt="">HOTEL</a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href = "#">Home</a></li>
+                    <li><a href = "#global">About</a></li>
+                    <li><a href = "#facility-1">Facilities</a></li>
+                    <li><a href = "#reviews">Reviews</a></li>
+                    <li><a href = "#footer">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"  onclick="showMenu()"></i>
+        </nav>
+        <section class = "text-box">
+            <h1>World's best Hotel</h1>
+            <p>To fulfill your choice is our dream.We committed for your happiness.</p>
+            <a href="#" class = "hero-btn">Visit to feel us</a>
+        </section>
+    </header>
+    <!-- course section menu  -->
+    <section class="course" id ="course-1" >
+        <h1>Facilities we offer</h1>
+        <p>dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz labore s La raison du moins fort c’est de la folie -Eugène Ionesco</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Accommodation</h3>
+                <p>elit Le temps est un grand maître, dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz l</p>
+            </div>
+            <div class="course-col">
+                <h3>Reservation</h3>
+                <p> elit Le temps est un grand maître, dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz l</p>
+            </div>
+            <div class="course-col">
+                <h3>Spa & Wellness </h3>
+                <p>dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz labore s La raison du moins fort c’est de la folie -Eugène Ionesco.</p>
+        </div>
+        </div>
+    </section>
+    <!-- campus section  -->
+    <section class="campus course" id="global">
+        <h1>our global cloister</h1>
+        <p>elit Le temps est un grand maître, dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz labore similique tempora, qui La raison c’est la folie du plus fort. La raison du moins fort c’est de la folie -Eugène Ionesco.</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="Thailand.jpg" alt="">
+                <div class="layer">
+                    <h1>DUBAI</h1>
+                </div>
+
+            </div>
+            <div class="campus-col">
+                <img src="Singapore.jpg" alt="">
+                <div class="layer">
+                    <h1>SINGAPORE</h1>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="INDIA.jpg" alt="">
+                <div class="layer">
+                    <h1>INDIA</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FACILITIES -->
+   <!-- facilities like the Wedding Hall, POOL and GYM,BAR  -->
+   <div class="facilities course">
+       <h1>Our Amenity</h1>
+       <p>elit Le temps est un grand maître, dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz labore similique tempora, qui La raison c’est la folie du plus fort. La raison du moins fort c’est de la folie -Eugène Ionesco.</p>
+       <div class="row">
+           <div class="facilities-col campus-col">
+               <img src="Wedding_Dinner.jpg" alt="">
+               <div class="layer">
+                   <h1>Dinner Hall</h1>
+               </div>
+           </div>
+           <div class="facilities-col campus-col">
+            <img src="Gym.jpg" alt="">
+            <div class="layer">
+                <h1>GYM</h1>
+            </div>
+        </div>
+        <div class="facilities-col campus-col">
+            <img src="pool.jpg" alt="">
+            <div class="layer">
+                <h1>POOL</h1>
+            </div>
+        </div>
+       </div>
+   </div>
+   <!-- tstimonials section -->
+   <section class="testmonials course" id="reviews">
+       <h1>What our client says</h1>
+       <p> “Il y a une femme dans toutes les affaires; aussitôt qu'on me fait un rapport, je dis: 'Cherchez la femme.'”</p>
+       <div class="row">
+           <div class="testimonials-col">
+                <img src="profile1.jpg" alt="">
+               <div class="intro">
+                   <p> Il n’y a pas de verités moyennes -Georges Bernanos  La vérité vaut bien qu’on passe quelques années sans la trouver-Jules Renardng </p>
+                   <h3>Charles cook</h3>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                </div>
+           </div>
+           <div class="testimonials-col ">
+            <img src="Profile2.jpg" alt="">
+            <div class="intro">
+                <p> Il n’y a pas de verités moyennes -Georges Bernanos  La vérité vaut bien qu’on passe quelques années sans la trouver-Jules Renardng elit Le temps est un grand maître, dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz labore similique tempora, qui La raison c’est la folie du plus fort. La raison du moins fort c’est de la folie -Eugène Ionesco.</p>
+                <h3>Partheeban bay </h3>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            </div>
+        <div class="testimonials-col">
+            <img src="profile3.jpg" alt="">
+            <div class="intro">
+                <p>exercitationem tenetur labore similique tempora, quidem laboriosam mollitia consequuntur. Est obcaecati laudantium eos?</p>
+                <h3>Dr.john alley</h3>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            </div>
+       </div>
+   </section>
+   <!-- call to action -->
+   <div class="cta course">
+       <h1>Book for our various amazing resource </h1>
+       <p>World's leading chain of hotels and homes
+Join our network and grow your business</p>
+       <a href="#" class = "hero-btn">Contact us </a>
+   </div>
+   <footer id="footer">
+       <div class="about-us">
+           <h1>About us </h1>
+           <p>Il n’y a pas de verités moyennes -Georges Bernanos  La vérité vaut bien qu’on passe quelques années sans la trouver-Jules Renardng elit Le temps est un grand maître, dit-on Le malheur est qui’il tue ses élèves -Hector Berlioz labore similique tempora. </p>
+
+        </div>
+        <div class="address">
+            <p class="institution-address"><i class="fas fa-home"></i> The Comapany name
+            <br>State, City. <br>INDIA</p>
+            <p class="phone"><i class="fas fa-phone"></i> 2110006789</p>
+            <p class="mail"><i class="fas fa-envelope"></i> cab@gmal.com</p>
+
+        </div>
+
+   </footer>
+   <p class="copy">&copy; Developer : Chandrajeet Jha</p>
+   <!-- social handles position  -->
+   <div class="social">
+       <div class="instagram">
+           <a href="#">INSTAGRAM <i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="facebook">
+            <a href="#">FACEBOOK <i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="twitter">
+            <a href="#">TWITTER <i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="linkedin">
+            <a href="#">LINKEDIN <i class="fab fa-linkedin"></i></a>
+        </div>
+   </div>
+        </div>
+   <script src="script.js"></script>
+</body>
+</html>
